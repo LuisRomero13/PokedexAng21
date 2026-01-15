@@ -1,0 +1,20 @@
+<main id="main">
+  <div id="detail">
+    <!-- <p>home main</p> -->
+  </div>
+  <div id="picture">
+    <app-pokemon-picture [class]="{abierto: detalle}"></app-pokemon-picture>
+  </div>
+  <div id="card">
+    @let listaPokemon = this.listaPokemon();
+
+    @for (pokemon of listaPokemon; track pokemon.name) {
+      <!-- @if (pokemon){ -->
+        <app-pokemon-card [dataPoke]="pokemon" [seleccionado]="pokemon.name === pokemonSeleccionado?.name" ></app-pokemon-card>
+      <!-- } -->
+    } 
+    <!-- @empty { -->
+    <!-- <img src="/assets/img/spinner.svg" alt="Cargando" id="spinner" /> -->
+    <!-- } -->
+  </div>
+</main>

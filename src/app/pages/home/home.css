@@ -1,0 +1,17 @@
+#main {
+    width: 100%;    
+    display: flex;
+}
+
+#picture {
+    width: 60%;
+    /* background-color: lightcoral; */
+}
+
+#card {
+    width: 40%;
+    /* background-color: rgb(218, 230, 173); */
+}
+#spinner{
+  max-height: 50px;
+}

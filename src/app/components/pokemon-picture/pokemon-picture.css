@@ -1,0 +1,23 @@
+#container-picture {
+  border: 4px solid #8cbbf1;
+  outline: 12px solid #f8e55c;
+  aspect-ratio: 1;
+  border-radius: 25px;
+   background: repeating-linear-gradient(
+    to bottom,
+    #f5f7f9,
+    #f5f7f9 15px,
+    #c9e2f4 15px,
+    #c9e2f4 25px
+  );
+  max-height: 70vh;
+  margin-top: 5%;
+  /* margin-left: 15%; */
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+ /* img{
+    width: 100%;
+    image-rendering: pixelated;
+  } */
