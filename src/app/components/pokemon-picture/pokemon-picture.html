@@ -1,5 +1,7 @@
 <div id="container-picture">
-    <img src="" alt="">
+  @if (pokemon()) {
+    <img src="{{pokemon()!.sprites.front_default}}" alt="">
+  }
 </div>
   <!-- <img src="{{pokemon.sprites.front_default}}" alt="" *ngIf="pokemon"> -->
 <!-- class="m-3 p-sm-4 p-md-5" -->

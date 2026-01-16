@@ -1,12 +1,14 @@
-<div id="container-card">
-  <img src="assets/img/flecha.png" id="flecha">
-  <div id="card">
+<div id="container-card" [class.seleccionado]="seleccionado()">
+  <img src="assets/img/flecha.png" id="flecha" />
+  <div id="card" (click) = "onCardClick()" [class.seleccionado]="seleccionado()">
     <div id="circle"></div>
-    <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id()}}.png' alt="">
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ id() }}.png"
+      alt=""
+    />
     <span>No. {{ id() }}</span>
-    @if (dataPoke()) {
-      <span>{{ dataPoke.name | titlecase }}</span>
-    }
+    @let dataPoke = this.dataPoke();
+    <span>{{ dataPoke!.name | titlecase }}</span>
   </div>
 </div>
 

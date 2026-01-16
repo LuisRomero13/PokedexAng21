@@ -1,19 +1,19 @@
-import { Component, input, computed } from '@angular/core';
+import { Component, input, computed, output } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { Resultado } from '../../interfaces/pokeapi';
-import { TitleCasePipe } from '@angular/common';
+import { TitleCasePipe, NgClass } from '@angular/common';
 import { Pokemon } from '../../interfaces/pokemon';
 @Component({
-  selector: 'app-pokemon-card',
   imports: [TitleCasePipe],
+  selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.html',
   styleUrl: './pokemon-card.css',
 })
 export class PokemonCard{
-
-  
-
+  seleccionado = input<boolean>(false);
+  // fullData? = input<Pokemon>();
   dataPoke = input<Resultado>();
+  
   id = computed(() => {
     const pokemon = this.dataPoke();
     if (pokemon && pokemon.url) {
@@ -21,8 +21,13 @@ export class PokemonCard{
     }
     return '0';
   });
-  seleccionado = input<boolean>(false);
-  fullData? = input<Pokemon>();
+  // output del id cuando se clickea la tarjeta
+  clickeado = output<string>();
+
+  onCardClick() {
+    this.clickeado.emit(this.id());
+  }
+
 
   // extraerInfromacion(): void {
   //   if (this.dataPoke && this.dataPoke.url !== '') {

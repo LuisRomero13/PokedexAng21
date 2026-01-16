@@ -16,10 +16,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
 export class Home {
   pokemonService = inject(PokemonService);
   listaPokemon = signal<Resultado[]>([]);
+  pokemonSeleccionado = signal<Pokemon | undefined>(undefined);
+  pokemonSeleccionadoId = signal<string>(''); // Agregamos esto para comparar instantáneamente
   pagina: number = 1;
-  // listaPokemon: Signal<Resultado[] | undefined> = toSignal(this.pokemonService.getByPage(this.pagina));
   cargando: boolean = false;
-  pokemonSeleccionado?: Pokemon;
   detalle: boolean = false;
 
   constructor() {
@@ -32,15 +32,14 @@ export class Home {
     this.pagina++;
   }
 
+  async tarjetaClickeada(id: string) {
+    this.pokemonSeleccionadoId.set(id); // Actualizar instantáneamente
+    this.pokemonService.getByIdObs(id).subscribe((data) => {
+      this.pokemonSeleccionado.set(data);
+    });
+  }
 
-  // async tarjetaClickeada(id: string) {
-  //   if (this.pokemonSeleccionado && id === this.pokemonSeleccionado?.id.toString()) {
-  //     return this.cambiarEstadoDetalle();
-  //   }
-  //   this.pokemonSeleccionado = await this.pokemonService.getById(id);
-  // }
-
-  // cambiarEstadoDetalle() {
-  //   if (this.pokemonSeleccionado) this.detalle = !this.detalle;
-  // }
+  cambiarEstadoDetalle() {
+    if (this.pokemonSeleccionado()) this.detalle = !this.detalle;
+  }
 }

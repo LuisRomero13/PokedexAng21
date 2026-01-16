@@ -1,10 +1,16 @@
 #container-card {
-  background-color: #da4443;
   display: flex;
   align-items: center;
-  /* height: 2%; */
   margin-top: .5rem;
 }
+
+#container-card.seleccionado {
+  background-color: #da4443;
+}
+
+/* #card.seleccionado {
+  background-color: #da4443;
+}  */
 
 #flecha {
   /* position: absolute; */
