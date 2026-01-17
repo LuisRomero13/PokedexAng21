@@ -1,6 +1,6 @@
 <div id="container-card" [class.seleccionado]="seleccionado()">
-  <img src="assets/img/flecha.png" id="flecha" />
-  <div id="card" (click) = "onCardClick()" [class.seleccionado]="seleccionado()">
+  <img src="assets/img/flecha.png" id="flecha" [class.seleccionado]="seleccionado()"/>
+  <div id="card" (click) = "onCardClick()" >
     <div id="circle"></div>
     <img
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ id() }}.png"

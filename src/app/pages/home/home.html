@@ -14,14 +14,6 @@
     ></app-pokemon-picture>
   </div>
   <div id="card" #tarjetas>
-    <mat-paginator
-      [length]="totalPokemon"
-      [pageSize]="pageSize"
-      [pageSizeOptions]="[5, 10, 25, 50]"
-      (page)="onPaginationChange($event)"
-      aria-label="Select page"
-    >
-    </mat-paginator>
     @let listaPokemon = this.listaPokemon(); @if (cargando) {
     <img src="/assets/img/spinner.svg" alt="Cargando" id="spinner" />
     } @else if (listaPokemon.length > 0) {

@@ -1,0 +1,19 @@
+header {
+    height: 15vh;
+}
+
+img {
+    /* height: clamp(30px, 5vw, 60px); */
+    height: 100%;
+}
+h1 {
+    text-shadow:
+        1px 1px 0 #000,
+        /* Inferior derecha */
+        -1px 1px 0 #000,
+        /* Inferior izquierda */
+        1px -1px 0 #000,
+        /* Superior derecha */
+        -1px -1px 0 #000;
+    /* Superior izquierda */
+}

@@ -10,16 +10,11 @@
     #c9e2f4 15px,
     #c9e2f4 25px
   );
-  /* max-width: 70%; */
   max-height: 70vh;
-  margin-top: 5%;
-  /* margin-right: 5%; */
-  margin-left: 30%;
-  /* justify-content:center ; */
-  /* margin-left: auto; */
+  margin-top: 10%;
 }
 
  img{
     width: 100%;
-    /* image-rendering: pixelated; */
+    image-rendering: pixelated;
   }
