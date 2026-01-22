@@ -1,0 +1,63 @@
+@let pokemon = this.pokemon();
+@if (pokemon) {
+<div class="mt-4">
+  <div class="row justify-content-center">
+    <div class="col-11">
+      <div class="shadow-lg border border-primary rounded-4 overflow-hidden">
+        <div class="card-header bg-gradient text-white text-center py-3">
+          <h2 class="h2 mb-0 text-uppercase fw-bold">{{ pokemon!.name }}</h2>
+          <p class="mb-0 mt-2 opacity-75">{{gen()}}</p>
+        </div>
+        
+        <div class="card-body p-2">
+          <div class="row mb-4">
+            <div>
+              <span class="text-white opacity-75 mb-3 fw-semibold">
+                TIPO: 
+              </span>
+              <span class="">
+                @for (types of pokemon.types; track types) {
+                  <span class="badge bg-primary bg-gradient text-white px-3 py-2 fs-6 rounded-pill mx-3">
+                    {{ types.type.name }}
+                  </span>
+                }
+              </span>
+            </div>
+          </div>
+          
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <div class="card bg-light border-0 rounded-3">
+                <div class="card-body text-center py-3">
+                  <i class="bi bi-rulers text-primary fs-4 mb-2"></i>
+                  <h6 class="text-muted mb-1">Altura</h6>
+                  <p class="h5 mb-0 fw-bold">{{ pokemon!.height }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card bg-light border-0 rounded-3">
+                <div class="card-body text-center py-3">
+                  <i class="bi bi-box-seam text-primary fs-4 mb-2"></i>
+                  <h6 class="text-muted mb-1">Peso</h6>
+                  <p class="h5 mb-0 fw-bold">{{ pokemon!.weight }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-footer bg-light p-1">
+          <div class="d-flex align-items-start">
+            <i class="bi bi-info-circle-fill text-primary fs-5 me-3 mt-1"></i>
+            <div class="flex-grow-1">
+              <h5 class="text-muted mb-1 fw-semibold">Descripción</h5>
+              <p class="text-secondary">{{ description() }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

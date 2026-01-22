@@ -1,11 +1,8 @@
 <main id="main">
   <div id="detail">
-    <!-- <app-detail
-    [pokemon]="pokemonSeleccionado"
-    (clickeado)="cambiarEstadoDetalle()"
-    [abierto]="detalle"
-    [class]="{ abierto: detalle }"
-  ></app-detail> -->
+    <app-detail
+      [pokemon]="pokemonSeleccionado()"
+    ></app-detail>
   </div>
   <div id="picture">
     <app-pokemon-picture
@@ -14,17 +11,18 @@
     ></app-pokemon-picture>
   </div>
   <div id="card" #tarjetas>
-    @let listaPokemon = this.listaPokemon(); @if (cargando) {
-    <img src="/assets/img/spinner.svg" alt="Cargando" id="spinner" />
+    @let listaPokemon = this.listaPokemon();
+    @if (cargando) {
+      <img src="/assets/img/spinner.svg" alt="Cargando" id="spinner" />
     } @else if (listaPokemon.length > 0) {
       @for (pokemon of listaPokemon; track pokemon.name) {
-      <app-pokemon-card
-        [dataPoke]="pokemon"
-        [seleccionado]="
-          pokemon.url === 'https://pokeapi.co/api/v2/pokemon/' + pokemonSeleccionadoId() + '/'
-        "
-        (clickeado)="tarjetaClickeada($event)"
-      ></app-pokemon-card>
+        <app-pokemon-card
+          [dataPoke]="pokemon"
+          [seleccionado]="
+            pokemon.url === 'https://pokeapi.co/api/v2/pokemon/' + pokemonSeleccionadoId() + '/'
+          "
+          (clickeado)="tarjetaClickeada($event)"
+        ></app-pokemon-card>
       }
     }
     <mat-paginator

@@ -7,10 +7,11 @@ import { Pokemon } from '../../interfaces/pokemon';
 import { tap } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { Detail } from "../../components/detail/detail";
 
 @Component({
   selector: 'app-home',
-  imports: [PokemonCard, PokemonPicture, MatPaginatorModule],
+  imports: [PokemonCard, PokemonPicture, MatPaginatorModule, Detail],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -47,7 +48,7 @@ export class Home {
     this.cargarPokemon(event.pageIndex, event.pageSize);
   }
 
-  async tarjetaClickeada(id: string) {
+  tarjetaClickeada(id: string) {
     this.pokemonSeleccionadoId.set(id);
     this.pokemonService.getByIdObs(id).subscribe((data) => {
       this.pokemonSeleccionado.set(data);

@@ -55,4 +55,13 @@ export class PokemonService {
     const texto = resJson.flavor_text_entries.find((texto: any) => texto.language.name === 'es');
     return texto.flavor_text;
   }
+
+  getGenObs(id: string | number): Observable<string> {
+    return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon-species/${id}`).pipe(
+      map((res) => {
+        const texto = res.genera.find((texto: any) => texto.language.name === 'es');
+        return texto.genus;
+      })
+    );
+  }
 }
