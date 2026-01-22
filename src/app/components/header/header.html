@@ -1,13 +1,26 @@
-<header class="w-100 bg-primary d-flex justify-content-center py-3 border-bottom border-dark">
-  <div class="d-flex justify-content-between align-items-center
-                  bg-info rounded-pill 
-                  px-1 px-sm-2 px-md-3 py-2 border border-dark" 
-           style="max-width: min(95vw, 550px);">
-    <img src="assets/img/pokeball azul.svg" class="img-fluid">
-    <h1 class="mb-0 text-white text-nowrap
-                   fs-2 fs-sm-1 fw-bold
-                   mx-2 mx-sm-3">Pokedex</h1>
-    <img src="assets/img/pokeball azul.svg" class="img-fluid">
+<header class="w-100 bg-primary border-bottom border-dark">
+  <div class="row m-0">
+    <div class="col d-flex flex-column align-items-center justify-content-center py-2 text-white">
+      <p class="opacity-75 mb-1 small">Desarrollado por:</p>
+      <h4 class="h4 mb-0 fw-bold">Luis Romero</h4>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center py-2">
+      <div
+        class="d-flex justify-content-between align-items-center bg-info rounded-pill px-1 px-sm-2 px-md-3 py-1 border border-dark"
+        style="max-width: 75%"
+      >
+        <img src="assets/img/pokeball azul.svg" />
+        <h1 class="mb-0 text-white text-nowrap fs-2 fw-bold mx-2 mx-sm-3">Pokedex</h1>
+        <img src="assets/img/pokeball azul.svg" />
+      </div>
+    </div>
+    <div class="col d-flex align-items-center">
+      <div
+        class="container d-flex align-items-center justify-content-between shadow-lg border border-primary rounded-4 overflow-hidden bg-gradient text-white text-center"
+      >
+        <h3 class="h3 mb-0 text-uppercase fw-bold">Música Pokemon</h3>
+        <app-music-player></app-music-player>
+      </div>
+    </div>
   </div>
-  <app-music-player></app-music-player>
 </header>
