@@ -17,7 +17,7 @@ Propias de angular:
 
 ## Despliegue de la app web
 
-
+[https://pokedex-ang21.vercel.app/](https://pokedex-ang21.vercel.app/)
 
 ## Additional Resources
 
