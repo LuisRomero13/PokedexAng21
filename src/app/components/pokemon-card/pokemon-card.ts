@@ -1,8 +1,6 @@
 import { Component, input, computed, output } from '@angular/core';
-import { PokemonService } from '../../services/pokemon.service';
 import { Resultado } from '../../interfaces/pokeapi';
-import { TitleCasePipe, NgClass } from '@angular/common';
-import { Pokemon } from '../../interfaces/pokemon';
+import { TitleCasePipe } from '@angular/common';
 @Component({
   imports: [TitleCasePipe],
   selector: 'app-pokemon-card',

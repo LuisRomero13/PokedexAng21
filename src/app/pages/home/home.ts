@@ -1,11 +1,10 @@
-import { Component, ElementRef, inject, OnInit, Signal, signal, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { PokemonCard } from '../../components/pokemon-card/pokemon-card';
 import { PokemonPicture } from '../../components/pokemon-picture/pokemon-picture';
 import { PokemonService } from '../../services/pokemon.service';
 import { Resultado } from '../../interfaces/pokeapi';
 import { Pokemon } from '../../interfaces/pokemon';
 import { tap } from 'rxjs';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Detail } from "../../components/detail/detail";
 

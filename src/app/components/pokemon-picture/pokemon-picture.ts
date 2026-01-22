@@ -8,6 +8,5 @@ import { Pokemon } from '../../interfaces/pokemon';
   styleUrl: './pokemon-picture.css',
 })
 export class PokemonPicture {
-  // @Input() pokemon?: Pokemon;
   pokemon =input<Pokemon | undefined>();
 }
